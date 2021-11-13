@@ -80,7 +80,7 @@ Although some of the test cases are vulnerable to additional exposures, the purp
 **Note:** To use SQLI labs correctly there is a .jsp page whose purpose is to create and populate the necessary database tables. To do this, visit the URL "**/wavsep/wavsep-install/install.jsp**", and follow instructions.
 
 ## Contributing
-Copyright © 2020, Luigi Urbano, Università degli Studi di Napoli Federico II<br/>
+Copyright © 2021, Luigi Urbano, Università degli Studi di Napoli Federico II<br/>
 Copyright © 2014, Shay Chen<br/>
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
