@@ -5,7 +5,7 @@
 # Reinforced-Wavsep 
 A reinforced version of the Wavsep evaluation platform.
 
-* Added ≃ 80 GET/POST new cases:
+* Added ≃  80 GET/POST new cases:
 
 	- Reflected XSS
 	- Blind Sql Injection
