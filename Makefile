@@ -2,7 +2,6 @@ COMPOSE = docker-compose
 MVN = mvn
 IMAGE = nsunina/wavsep:v1.8
 build:
-	$(MVN) package
 	$(COMPOSE) build
 
 up: build

@@ -48,9 +48,22 @@ This evaluation platform contains a collection of unique vulnerable web pages th
 
 ## Installation 
 ### Modern approach
-Install docker and docker-compose: 
+1. Install docker and docker-compose: 
 - https://docs.docker.com/get-docker/ 
-- https://docs.docker.com/compose/install/   
+- https://docs.docker.com/compose/install/        
+
+2. Build the package   
+```  
+sudo apt install default-jdk maven
+
+``` 
+
+Then run: 
+``` 
+docker-compose up   # docker compose up   
+```   
+The wavsep will run on `http://0.0.0.0:18080` . 
+
 
 
 ### Old style approach
@@ -85,20 +98,11 @@ sudo apt install mysql-server
 sudo mysql_secure_installation (During installation select 'N', 0, enter root password, 'Y')
 systemctl status mysql.service
 ```
+   
 
-## Usage    
-Run the environment with the modern or old-style approach, then the wavsep benchmark is available at the following link:   
+(4) Build the wavsep application and copy it in the tomcat folder
 
-http://127.0.0.1:18080/wavsep/  
-
-Use the `Makefile`:   
-* run the environmet:  `make up` 
-* build the docker image: `make build` 
-* stop the environment: `make down` 
-
-### Old style approach 
-
-(i) Create the package with `mvn package`and copy the wavsep.war file into the tomcat webapps directory (with git):
+Create the package with `mvn package`  and copy the wavsep.war file into the tomcat webapps directory (with git):
 ```bash
 cd /opt/tomcat/webapps/
 mv /path/to/wavsep.war/ .
@@ -112,6 +116,14 @@ or
 cd/opt/tomcat/bin/
 ./startup.sh
 ```
+
+## Usage    
+Run the environment with the modern or old-style approach, then the wavsep benchmark is available at the following link:   
+
+```
+http://0.0.0.0:18080
+```
+
 
 Although some of the test cases are vulnerable to additional exposures, the purpose of each test case is to evaluate the detection accuracy of one type of exposure, and thus, “out of scope” exposures should be ignored when evaluating the accuracy of vulnerability scanners.
 
