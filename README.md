@@ -24,10 +24,10 @@ A reinforced version of the Wavsep evaluation platform.
 
 ## Benchmark test cases
 The environment is actually composed of *1405 vulnerable test cases*: 
-* 113 vulnerable Reflected XSS test cases;
+* 116 vulnerable Reflected XSS test cases;
 * 4 vulnerable DOM XSS test cases;
-* 168 vulnerable SQL Injection test cases;
-* 820 vulnerable Local File Inclusion test cases;   
+* 158 vulnerable SQL Injection test cases;
+* 748 vulnerable Local File Inclusion test cases;   
 * 108 vulnerable,  Remote File Inclusione test cases;  
 * 120 vulnerable OS-Command-Injection test cases; 
 * 60 vulnerable Unvalidated Redirect test cases;   

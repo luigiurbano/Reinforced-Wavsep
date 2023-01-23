@@ -3,9 +3,12 @@ import json
 import sys
 
 import requests
+from urllib.parse import urlparse
 
 # from haralyzer import HarParser, HarPage
 from my_har_parser import HarParser
+
+DEFAULT_TIMEOUT = 2
 
 
 methods = {
@@ -105,11 +108,18 @@ def to_dict(l: list):
 
 def send_request(req, proxy):
     req_function = methods[req.method]
-    if req.method == "POST":
-        resp = requests.post(req.url , proxies = {"http" : proxy, "https" : proxy}, verify = False, data = req.body, headers = req.headers, allow_redirects=False)
-    else:
-        resp = req_function(req.url, proxies = {"http" : proxy, "https" : proxy}, verify = False, headers = req.headers)
-    return resp
+    the_url = urlparse(req.url).scheme
+    try: 
+        if the_url != 'http' and the_url != 'https':
+            print("[-] Invalid scheme protocol: {}".format(the_url))
+        else:
+            if req.method == "POST":
+                resp = requests.post(req.url , proxies = {"http" : proxy, "https" : proxy}, verify = False, data = req.body, headers = req.headers, allow_redirects=False, timeout=DEFAULT_TIMEOUT)
+            else:
+                resp = req_function(req.url, proxies = {"http" : proxy, "https" : proxy}, verify = False, headers = req.headers, allow_redirects= False, timeout=DEFAULT_TIMEOUT)
+            return resp
+    except requests.exceptions.ReadTimeout: 
+        print("[-] Req exception timeout")
 
 
 def send_from_har(har_file, proxy):
