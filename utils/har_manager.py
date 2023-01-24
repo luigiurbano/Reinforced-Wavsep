@@ -128,3 +128,12 @@ def send_from_har(har_file, proxy):
         print("Send {}".format(r.url))
         send_request(r, proxy)
 
+
+def print_from_har(har_file):
+    requests = HarParser.from_file(har_file)
+    for r in requests:
+        print(r.url)
+
+def urls_from_har(har_file):
+    requests = HarParser.from_file(har_file)
+    return [r.url for r in requests]

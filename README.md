@@ -127,7 +127,47 @@ http://0.0.0.0:18080
 
 Although some of the test cases are vulnerable to additional exposures, the purpose of each test case is to evaluate the detection accuracy of one type of exposure, and thus, “out of scope” exposures should be ignored when evaluating the accuracy of vulnerability scanners.
 
-**Note:** To use SQLI labs correctly there is a .jsp page whose purpose is to create and populate the necessary database tables. To do this, visit the URL "**/wavsep/wavsep-install/install.jsp**", and follow instructions.
+**Note:** To use SQLI labs correctly there is a .jsp page whose purpose is to create and populate the necessary database tables. To do this, visit the URL "**/wavsep/wavsep-install/install.jsp**", and follow instructions.   
+
+
+## Utils scripts   
+The repo includes a `utils` folder that contains several utility modules:  
+* A crawler that allows to run all the tests.  
+* A `print_requests.py` module that can be used to print all the requests.   
+* A `expected_results_generator.py` module that can be used to generate a `csv` file compliant with the OWASP Benchmarking Utility suite.   
+
+
+
+To run the crawler: 
+```  
+usage: run_crawler.py [-h] [host] [port] [category] [harfile]
+
+Run crawler
+
+positional arguments:
+  host
+  port
+  category
+  harfile
+
+options:
+  -h, --help  show this help message and exit  
+```  
+
+To print the requests:  
+```  
+usage: print_requests.py [-h] [category] [harfile]
+
+Run crawler
+
+positional arguments:
+  category
+  harfile
+
+options:
+  -h, --help  show this help message and exit  
+  ```  
+
 
 ## Contributing
 Copyright © 2020, Luigi Urbano, Università degli Studi di Napoli Federico II<br/>

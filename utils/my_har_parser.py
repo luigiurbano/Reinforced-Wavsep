@@ -43,7 +43,6 @@ def get_categories():
 
 
 def _get_har_sessions(category):
-    print(category)
     return [f for f in os.listdir(os.path.join(HAR_FOLDER, category)) if os.path.isfile(os.path.join(HAR_FOLDER, category, f))] 
 
 
