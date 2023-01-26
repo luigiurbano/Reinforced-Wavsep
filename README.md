@@ -46,23 +46,39 @@ The benchmark also contains *40 non-vulnerable test cases*:
 WAVSEP is vulnerable web application designed to help assessing the features, quality and accuracy of web application vulnerability scanners.
 This evaluation platform contains a collection of unique vulnerable web pages that can be used to test the various properties of web application scanners.
 
-## Installation 
+## Installation    
 ### Modern approach
 1. Install docker and docker-compose: 
 - https://docs.docker.com/get-docker/ 
 - https://docs.docker.com/compose/install/        
 
-2. Build the package   
-```  
-sudo apt install default-jdk maven
 
-``` 
-
-Then run: 
+To use it with `docker-compose`: 
 ``` 
 docker-compose up   # docker compose up   
 ```   
-The wavsep will run on `http://0.0.0.0:18080` . 
+
+
+To use it with `docker`:   
+```  
+docker network create wavsep-net
+docker run --rm -d --net wavsep-net --name wavsepdb nsunina/wavsep-db:v1.8 
+docker run --rm -d --net wavsep-net -p 18080:8080 --name wavsep nsunina/wavsep:v1.8
+```   
+
+
+The wavsep will run on `http://0.0.0.0:18080` .     
+
+To stop it:  
+``` 
+docker-compose down    
+```
+if you are using `docker-compose`, otherwise:   
+```   
+docker rm -f wavsep
+docker rm -f wavsepdb
+docker network rm wavsep-net
+```
 
 
 
@@ -123,6 +139,14 @@ Run the environment with the modern or old-style approach, then the wavsep bench
 ```
 http://0.0.0.0:18080
 ```
+
+Now you can configure the database:  
+```http://127.0.0.1:18080/wavsep/wavsep-install/index.jsp`  
+
+- **Username**: root 
+- **Password**: pass 
+- **Database**: wavsepdb
+
 
 
 Although some of the test cases are vulnerable to additional exposures, the purpose of each test case is to evaluate the detection accuracy of one type of exposure, and thus, “out of scope” exposures should be ignored when evaluating the accuracy of vulnerability scanners.
@@ -191,5 +215,7 @@ If you find this code useful in your research, please, consider citing our paper
 }
 ```
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+## License  
+Distributed under the GPL v3 License. See LICENSE.txt for more information.
+
+

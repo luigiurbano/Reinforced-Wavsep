@@ -48,8 +48,7 @@ mappings = [
     OwaspReinforcedMap('cmdi', 'os', '78'),
     OwaspReinforcedMap('pathtraver', 'lfi', '22'),
     OwaspReinforcedMap('pathtraver', 'rfi', '22'),
-    # Not present in owasp. to verify
-    OwaspReinforcedMap('openredirect', 'open-redirect', '601'),
+    OwaspReinforcedMap('redirect', 'open-redirect', '601'),
     OwaspReinforcedMap('xss', 'xss', '79'),
     OwaspReinforcedMap('xpathi', 'xxe', '643'),
     OwaspReinforcedMap('sqli', 'sql', '89'),

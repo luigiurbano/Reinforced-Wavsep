@@ -4,7 +4,7 @@ import sys
 import argparse
 
 
-from utils.har_manager import send_from_har
+from har_manager import send_from_har
 from my_har_parser import get_har_file, get_categories,get_har_sessions
 
 
@@ -23,20 +23,22 @@ def e():
     sys.exit(-1)
 
 def usage():
-    print("[-] Usage: run_crawler.py <category> <har_file> <host> <port>")
+    print("[-] Usage: run_crawler.py <host> <port> <category> <harfile>")
     e()
 
 har_sessions = {}
-if args.category == None: 
+if args.category == "":
+    print("har")
     har_sessions = get_har_sessions()
 
-elif args.harfile == '': 
+elif args.harfile == '':
     har_sessions = get_har_sessions(args.category)
 
-else: 
+else:
     har_sessions[args.category] = [args.harfile]
 
-
+print("Sessions")
+print(har_sessions)
 for category, sessions in har_sessions.items():
     for s in sessions:
         filepath = get_har_file(category, s)

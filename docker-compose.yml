@@ -1,15 +1,14 @@
 version: '3.6'
 services:
   wavsep:
-    build: .
-    container_name: wavsep
+    image: ns-unina/wavsep:v1.8
     ports:
       - "18080:8080"
     links:
       - wavsepdb
 
   wavsepdb:
-    image: mysql:latest
+    image: ns-unina/wavsep-db:v1.8
     container_name: wavsepdb
     ports:
       - "127.0.0.1:3306:3306"
