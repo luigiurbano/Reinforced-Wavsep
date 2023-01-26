@@ -154,7 +154,7 @@ Although some of the test cases are vulnerable to additional exposures, the purp
 **Note:** To use SQLI labs correctly there is a .jsp page whose purpose is to create and populate the necessary database tables. To do this, visit the URL "**/wavsep/wavsep-install/install.jsp**", and follow instructions.   
 
 
-## Utils scripts   
+## Utility scripts   
 The repo includes a `utils` folder that contains several utility modules:  
 * A crawler that allows to run all the tests.  
 * A `print_requests.py` module that can be used to print all the requests.   
@@ -190,7 +190,8 @@ positional arguments:
 
 options:
   -h, --help  show this help message and exit  
-  ```  
+  ```    
+
 
 
 ## Contributing
