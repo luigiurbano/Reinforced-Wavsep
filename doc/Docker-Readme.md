@@ -1,3 +1,5 @@
+# Reinforced Wavsep Docker Image
+
 The Reinforced Wavsep Image.  
 Github Repo at: 
 * https://github.com/0xUrbz/Reinforced-Wavsep
@@ -9,9 +11,38 @@ You need `docker-compose` or create a script to run it.
 ### Docker compose usage
 
 
-To use it with `docker-compose`: 
+To use it with `docker-compose` create a `docker-compose.yml` file:  
+
+```    
+version: '3.6'
+services:
+  wavsep:
+    image: ns-unina/wavsep:v1.8
+    ports:
+      - "18080:8080"
+    links:
+      - wavsepdb
+
+  wavsepdb:
+    image: ns-unina/wavsep-db:v1.8
+    container_name: wavsepdb
+    ports:
+      - "127.0.0.1:3306:3306"
+    command: mysqld --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: 'pass'
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_USER: 'wavsep'
+      MYSQL_PASSWORD: 'wavsepPass782'
+      MYSQL_DATABASE: 'wavsepDB'
+
+
+```  
+Then run: 
 ``` 
-docker-compose up   # docker compose up   
+docker-compose up   
 ```   
 ### Docker usage
 
