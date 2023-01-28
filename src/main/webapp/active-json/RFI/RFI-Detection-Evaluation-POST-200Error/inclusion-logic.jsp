@@ -555,7 +555,7 @@ $(document).on("submit", "#frmInput", function(event) {
 						System.out.println("File to access:" + prefix
 								+ targetFile);
 						File f = new File(".");
-						System.out.println("Current Absultoe File Path: "
+						System.out.println("Current Absolute File Path: "
 										+ f.getAbsolutePath());
 						System.out.println("Current Canonical Dir Path: "
 										+ f.getCanonicalPath());
@@ -576,7 +576,7 @@ $(document).on("submit", "#frmInput", function(event) {
 						System.out.println("File to access:" + prefix
 								+ targetFile);
 						File f = new File(".");
-						System.out.println("Current Absultoe File Path: "
+						System.out.println("Current Absolute File Path: "
 										+ f.getAbsolutePath());
 						System.out.println("Current Canonical Dir Path: "
 										+ f.getCanonicalPath());

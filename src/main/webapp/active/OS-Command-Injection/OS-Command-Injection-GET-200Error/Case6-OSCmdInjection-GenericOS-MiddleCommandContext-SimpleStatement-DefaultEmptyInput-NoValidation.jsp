@@ -211,7 +211,7 @@
 							+ input + postfix);
 					File f = new File(".");
 					System.out
-							.println("Current Absultoe File Path: "
+							.println("Current Absolute File Path: "
 									+ f.getAbsolutePath());
 					System.out
 							.println("Current Canonical Dir Path: "
@@ -221,6 +221,7 @@
 				java.lang.Process tempProcess = null;
 				//run the command
 				try {
+					System.out.println(prefix + input + postfix);
 					tempProcess = Runtime.getRuntime().exec(prefix + input + postfix);
 					tempProcess.waitFor();
 				} catch (Exception e) {

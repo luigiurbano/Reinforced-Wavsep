@@ -458,7 +458,7 @@
 									+ targetFile);
 							File f = new File(".");
 							System.out
-									.println("Current Absultoe File Path: "
+									.println("Current Absolute File Path: "
 											+ f.getAbsolutePath());
 							System.out
 									.println("Current Canonical Dir Path: "
@@ -481,7 +481,7 @@
 									+ targetFile);
 							File f = new File(".");
 							System.out
-									.println("Current Absultoe File Path: "
+									.println("Current Absolute File Path: "
 											+ f.getAbsolutePath());
 							System.out
 									.println("Current Canonical Dir Path: "

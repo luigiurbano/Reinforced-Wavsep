@@ -9,7 +9,7 @@
 <body>
 <H3>Welcome to WAVSEP - The Web Application Vulnerability Scanner Evaluation Project</H3>
 
-<H4>Version: 1.5</H4><br>
+<H4>Version: 1.8</H4><br>
 
 The index page of the project intentionally lacks links and forms.<br>
 Please access the following index pages to perform specific tests:<br>
