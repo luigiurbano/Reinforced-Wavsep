@@ -1,0 +1,25 @@
+version: '3.6'
+services:
+  wavsep: 
+    image: tomcat:8.5.84-jdk8-corretto
+    ports:
+      - "18080:8080"
+    volumes: 
+      - ./target/wavsep-enhancement-1.8-SNAPSHOT.war:/usr/local/tomcat/webapps/wavsep.war
+    links:
+      - wavsepdb
+  wavsepdb:
+    image: nsunina/wavsep-db:v1.8
+    container_name: wavsepdb
+    ports:
+      - "127.0.0.1:3306:3306"
+    command: mysqld --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: 'pass'
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_USER: 'wavsep'
+      MYSQL_PASSWORD: 'wavsepPass782'
+      MYSQL_DATABASE: 'wavsepDB'
+
