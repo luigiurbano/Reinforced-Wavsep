@@ -109,7 +109,7 @@ def to_dict(l: list):
 def send_request(req, proxy):
     req_function = methods[req.method]
     the_url = urlparse(req.url).scheme
-    try: 
+    try:
         if the_url != 'http' and the_url != 'https':
             print("[-] Invalid scheme protocol: {}".format(the_url))
         else:
@@ -118,14 +118,15 @@ def send_request(req, proxy):
             else:
                 resp = req_function(req.url, proxies = {"http" : proxy, "https" : proxy}, verify = False, headers = req.headers, allow_redirects= False, timeout=DEFAULT_TIMEOUT)
             return resp
-    except requests.exceptions.ReadTimeout: 
+    except requests.exceptions.ReadTimeout:
+        print(req.url)
         print("[-] Req exception timeout")
 
 
 def send_from_har(har_file, proxy):
     requests = HarParser.from_file(har_file)
     for r in requests:
-        print("Send {}".format(r.url))
+        # print("Send {}".format(r.url))
         send_request(r, proxy)
 
 
