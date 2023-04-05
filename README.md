@@ -190,11 +190,36 @@ positional arguments:
 
 options:
   -h, --help  show this help message and exit  
-  ```    
+  ```     
 
 
 
-## Contributing
+
+
+## Contributing  
+In order to change a test-case: 
+- Apply changes, and change the `pom.xml` patch version 
+- Run `mvn package` to create the `war` file. 
+- Run `docker-compose -f docker-compose-dev.yml up` 
+- Change the test case 
+- Verify the changes 
+
+### Send a PR
+
+1. Fork it!
+2. Create your feature branch: git checkout -b my-new-feature
+3. Commit your changes: git commit -am 'Add some feature'
+4. Push to the branch: git push origin my-new-feature
+5. Submit a pull request, we'll check
+
+### For mantainers
+When you complete a feature: 
+- Change the `image version` in the `pom.xml` and in the `Makefile` 
+- Run `make push` to push the image in the remote repositoy
+
+
+
+## Copyrights
 Copyright © 2020, Luigi Urbano, Università degli Studi di Napoli Federico II<br/>
 Copyright © 2014, Shay Chen<br/>
 

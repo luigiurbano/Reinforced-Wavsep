@@ -2,7 +2,7 @@ COMPOSE = docker-compose
 MVN = mvn
 BUILD=docker build -t
 
-IMAGE = nsunina/wavsep:v1.8
+IMAGE = nsunina/wavsep:v1.8.1
 DB_IMAGE=nsunina/wavsep-db:v1.8
 
 build:
