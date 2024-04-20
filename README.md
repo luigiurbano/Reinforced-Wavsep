@@ -80,6 +80,22 @@ docker rm -f wavsepdb
 docker network rm wavsep-net
 ```
 
+## Development mode 
+To run in development mode: 
+- Compile the project: `mvn compile`
+- Run docker-compose with the following command: 
+``` 
+docker-compose -f docker-compose-dev.yml up
+```
+
+
+When you change the code, recompile the project, and run the following: 
+```
+mvn package
+```
+
+All the changes will be updated.
+
 
 
 ### Old style approach
@@ -218,6 +234,20 @@ When you complete a feature:
 - Run `make push` to push the image in the remote repositoy
 
 
+## Troubleshooting 
+### [ERROR] Failed to execute goal org.apache.maven.plugins:maven-war-plugin:3.3.2:war (default-war) on project wavsep-enhancement: Error assembling WAR: .../target/wavsep-enhancement-1.8.1-SNAPSHOT.war isn't a file. 
+To fix it, check if the `wavsep-enhancement-xxx` is a folder, and remove it. 
+```
+rm -rf target/wavsep-enhancement-1.8.1-SNAPSHOT*
+```
+
+
+### Error response from daemon: failed to create task for container: 
+```failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error mounting "...Wavsep/target/wavsep-enhancement-1.8.1-SNAPSHOT.war" to rootfs at "/usr/local/tomcat/webapps/wavsep.war": mount /.../Reinforced-Wavsep/target/wavsep-enhancement-1.8.1-SNAPSHOT.war:/usr/local/tomcat/webapps/wavsep.war (via /proc/self/fd/6), flags: 0x5000: not a directory: unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type```
+
+To fix this error, run `docker-compose down` and then restart with the steps described in the development mode.
+
+
 
 ## Copyrights
 Copyright © 2020, Luigi Urbano, Università degli Studi di Napoli Federico II<br/>
@@ -243,5 +273,8 @@ If you find this code useful in your research, please, consider citing our paper
 
 ## License  
 Distributed under the GPL v3 License. See LICENSE.txt for more information.
+
+
+
 
 
