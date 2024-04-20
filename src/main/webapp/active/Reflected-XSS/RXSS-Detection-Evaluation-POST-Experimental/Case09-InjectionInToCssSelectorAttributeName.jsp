@@ -15,7 +15,7 @@
 if (request.getParameter("userinput") == null) {
 %>
 	Enter your input:<br><br>
-	<form name="frmInput" id="frmInput" method="GET">
+	<form name="frmInput" id="frmInput" method="POST">
 		<input type="text" name="userinput" id="userinput"><br>
 		<input type=submit value="submit">
 	</form>
