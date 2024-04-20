@@ -10,7 +10,7 @@
 if (request.getParameter("userinput") == null) {
 %>
 	Enter your input:<br><br>
-	<form name="frmInput" id="frmInput" action="Case31-Tag2HtmlPageScopeDuringException.jsp" method="POST">
+	<form name="frmInput" id="frmInput" action="Case31-Tag2HtmlPageScopeDuringException.jsp" method="GET">
 		<input type="text" name="userinput" id="userinput"><br>
 		<input type=submit value="submit">
 	</form>
