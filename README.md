@@ -180,19 +180,21 @@ The repo includes a `utils` folder that contains several utility modules:
 
 To run the crawler: 
 ```  
-usage: run_crawler.py [-h] [host] [port] [category] [harfile]
+usage: run_crawler.py [-h] [proxy-host] [proxy-port] [category] [harfile]
 
 Run crawler
 
 positional arguments:
-  host
-  port
+  proxy-host
+  proxy-port
   category
   harfile
 
 options:
   -h, --help  show this help message and exit  
 ```  
+
+The crawler requires a running instance on `localhost:18080`
 
 To print the requests:  
 ```  
@@ -207,6 +209,12 @@ positional arguments:
 options:
   -h, --help  show this help message and exit  
   ```     
+
+  ### wavsep-utils.sh 
+  An utility script: 
+  `source wavsep-utils.sh` to enable the several functions. 
+  Then you can use the following commands:
+* `print_sql`: to print the sql test cases
 
 
 
