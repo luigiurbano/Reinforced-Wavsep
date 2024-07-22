@@ -275,7 +275,7 @@
 	Show Log:
 	<br>
 	<br>
-	<form name="frmInput" id="frmInput" method="POST">
+	<form name="frmInput" id="frmInput" method="GET">
 		<input type="text" name="target" id="target"
 			value="<%=defaultTargetFile%>"><br> <input type=submit
 			value="Get It!">
@@ -289,7 +289,7 @@
 	Get Content:
 	<br>
 	<br>
-	<form name="frmInput" id="frmInput" method="POST">
+	<form name="frmInput" id="frmInput" method="GET">
 		<input type="text" name="target" id="target"
 			value="<%=defaultTargetFile%>"><br> <input type=submit
 			value="Get It!">
@@ -302,7 +302,7 @@
 	Get Content:
 	<br>
 	<br>
-	<form name="frmInput" id="frmInput" method="POST">
+	<form name="frmInput" id="frmInput" method="GET">
 		<input type="text" name="target" id="target"
 			value="<%=defaultTargetFile%>"><br> <input type=submit
 			value="Get It!">
