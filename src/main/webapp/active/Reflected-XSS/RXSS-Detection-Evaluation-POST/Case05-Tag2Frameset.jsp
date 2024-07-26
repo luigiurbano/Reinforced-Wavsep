@@ -7,7 +7,7 @@
 
 
 <%
-if (request.getParameter("userinput") == null) {
+if (request.getParameter("userinput") == null || !"POST".equalsIgnoreCase(request.getMethod())) {
 %>
     <body>
 	Enter your input:<br><br>

@@ -7,7 +7,7 @@
 <body>
 
 <%
-if (request.getParameter("userinput") == null) {
+if (request.getParameter("userinput") == null || !"POST".equalsIgnoreCase(request.getMethod())) {
 %>
 	Enter your input:<br><br>
 	<form name="frmInput" id="frmInput" action="Case31-Tag2HtmlPageScopeDuringException.jsp" method="POST">

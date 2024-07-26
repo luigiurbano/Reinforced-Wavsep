@@ -22,7 +22,7 @@ if(anticsrf == null) {
 %>
 
 <%
-if (request.getParameter("userinput") == null) {
+if (request.getParameter("userinput") == null || !"POST".equalsIgnoreCase(request.getMethod())) {
 %>
 	Enter your input:<br><br>
 	<form name="frmInput" id="frmInput" method="POST">

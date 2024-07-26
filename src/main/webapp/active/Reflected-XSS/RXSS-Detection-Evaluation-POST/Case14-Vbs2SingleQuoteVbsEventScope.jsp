@@ -8,7 +8,7 @@
 <body>
 
 <%
-if (request.getParameter("userinput") == null) {
+if (request.getParameter("userinput") == null || !"POST".equalsIgnoreCase(request.getMethod())) {
 %>
 	Enter your input:<br><br>
 	<form name="frmInput" id="frmInput" action="Case14-Vbs2SingleQuoteVbsEventScope.jsp" method="POST">

@@ -34,7 +34,7 @@ if (request.getParameter("userinput") != null) {
 String newAnticsrfToken = "" + Math.random();
 request.getSession().setAttribute("newAnticsrfToken", newAnticsrfToken);
 
-if (request.getParameter("userinput") == null) {
+if (request.getParameter("userinput") == null || !"POST".equalsIgnoreCase(request.getMethod())) {
 %>
 	Enter your input:<br><br>
 	<form name="frmInput" id="frmInput" method="POST">

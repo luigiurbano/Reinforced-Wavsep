@@ -1,7 +1,7 @@
 version: '3.6'
 services:
   wavsep:
-    image: nsunina/wavsep:v1.8.2
+    image: nsunina/wavsep:v1.8.3
     ports:
       - "18080:8080"
     links:
